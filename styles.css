@@ -2,13 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background: #0b0b0b;
+    background: black;
     color: white;
-    scroll-behavior: smooth;
 }
 
 /* NAVBAR */
@@ -17,155 +16,100 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background: black;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 0 10px #00ffcc55;
+    background: #111;
+    box-shadow: 0 0 10px cyan;
 }
 
 .logo {
-    color: #00ffcc;
-    text-shadow: 0 0 10px #00ffcc;
+    color: cyan;
 }
 
-nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-nav a:hover {
-    color: #00ffcc;
-}
-
-.login-btn {
-    background: #00ffcc;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 20px;
+.nav-buttons button {
+    margin-left: 10px;
+    padding: 8px 14px;
+    background: transparent;
+    color: cyan;
+    border: 1px solid cyan;
+    border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 0 10px #00ffcc;
 }
 
-/* HERO */
-.hero {
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.nav-buttons button:hover {
+    background: cyan;
+    color: black;
+}
+
+/* SECTIONS */
+.section {
+    display: none;
+    padding: 40px 20px;
     text-align: center;
-    background: linear-gradient(135deg, black, #111);
 }
 
-.hero h2 {
-    font-size: 2.3rem;
-    text-shadow: 0 0 15px #00ffcc;
+.section.active {
+    display: block;
 }
 
-.hero p {
-    margin: 10px 0 20px;
-    opacity: 0.9;
-}
-
+/* HOME */
 .explore-btn {
-    background: #00ffcc;
-    padding: 14px 30px;
+    margin-top: 25px;
+    padding: 12px 20px;
+    font-size: 18px;
+    background: cyan;
+    color: black;
     border: none;
-    border-radius: 30px;
-    font-size: 1rem;
+    border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0 0 20px #00ffcc;
+}
+
+.explore-btn:hover {
+    box-shadow: 0 0 15px cyan;
 }
 
 /* SPORTS */
-.sports {
-    padding: 40px 20px;
-    text-align: center;
-}
-
 .sports-grid {
+    margin-top: 30px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
 }
 
-.card {
-    background: #111;
-    padding: 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 0 10px #00ffcc33;
-}
-
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px #00ffcc;
-}
-
-/* EQUIPMENT */
-.equipment {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.equip-list {
-    display: none;
-}
-
-.equip-list h2 {
-    margin-bottom: 15px;
-    text-shadow: 0 0 10px #00ffcc;
-}
-
-.equip-list ul {
-    list-style: none;
-}
-
-.equip-list li {
-    background: #111;
-    margin: 10px auto;
-    padding: 12px;
-    width: 85%;
-    border-radius: 20px;
-    box-shadow: 0 0 10px #00ffcc33;
-}
-
-.back-btn {
-    margin-top: 20px;
-    padding: 10px 22px;
-    border: none;
-    border-radius: 25px;
-    background: #00ffcc;
-    cursor: pointer;
-    box-shadow: 0 0 10px #00ffcc;
-}
-
-/* ABOUT & CONTACT */
-.about, .contact {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-/* FOOTER */
-footer {
-    background: black;
+.sports-grid button {
     padding: 15px;
-    text-align: center;
-    font-size: 0.9rem;
+    font-size: 16px;
+    background: #111;
+    color: white;
+    border: 1px solid cyan;
+    border-radius: 12px;
+    cursor: pointer;
 }
 
-/* HIDDEN */
-.hidden {
+.sports-grid button:hover {
+    background: cyan;
+    color: black;
+}
+
+/* SPORT DETAILS */
+.sport-details {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid cyan;
+    border-radius: 15px;
     display: none;
+}
+
+/* ABOUT */
+#about p {
+    margin-top: 20px;
+    line-height: 1.6;
+    color: #ccc;
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
-    nav {
-        display: none;
+    .nav-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
     }
 }
