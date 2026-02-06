@@ -1,147 +1,178 @@
-/* RESET */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* BODY */
 body {
-  background-color: #0b0b0b;
-  color: white;
+    background: #0b0b0b;
+    color: white;
+    scroll-behavior: smooth;
 }
 
 /* NAVBAR */
 .navbar {
-  background: black;
-  padding: 15px;
-  text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: black;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.navbar h1 {
-  color: #00ffcc;
+.logo {
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc;
 }
 
-/* HERO SECTION */
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #00ffcc;
+}
+
+.login-btn {
+    background: #00ffcc;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* HERO */
 .hero {
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, black, #111);
 }
 
 .hero h2 {
-  font-size: 32px;
+    font-size: 2.2rem;
+    text-shadow: 0 0 15px #00ffcc;
 }
 
 .hero p {
-  margin-top: 10px;
-  opacity: 0.8;
+    margin: 10px 0 20px;
 }
 
-.hero button {
-  margin-top: 20px;
-  padding: 12px 28px;
-  border: none;
-  background: #00ffcc;
-  color: black;
-  font-size: 16px;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: 0.3s;
+.explore-btn {
+    background: #00ffcc;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 20px #00ffcc;
 }
 
-.hero button:hover {
-  background: white;
-  box-shadow: 0 0 20px #00ffcc;
+/* SPORTS */
+.sports {
+    padding: 40px 20px;
+    text-align: center;
 }
 
-/* GENERAL SECTION */
-.section {
-  padding: 60px 20px;
-  text-align: center;
+.sports h2 {
+    margin-bottom: 20px;
 }
 
-.section h2 {
-  margin-bottom: 30px;
-  color: #00ffcc;
-}
-
-/* DARK SECTION */
-.dark {
-  background: #111;
-}
-
-/* SPORTS GRID */
 .sports-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
 }
 
-/* SPORT CARD */
 .card {
-  background: #151515;
-  border-radius: 15px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: 0.3s;
+    background: #111;
+    border-radius: 20px;
+    padding: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #00ffcc33;
 }
 
 .card img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-}
-
-.card p {
-  padding: 10px;
-  font-weight: bold;
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
 .card:hover {
-  transform: translateY(-6px) scale(1.05);
-  box-shadow: 0 0 20px #00ffcc;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00ffcc;
 }
 
-/* EQUIPMENT DISPLAY */
+/* EQUIPMENT */
 .equipment {
-  display: none;
-  margin-top: 20px;
-  background: #151515;
-  padding: 20px;
-  border-radius: 12px;
-  animation: slideUp 0.5s ease;
+    padding: 40px 20px;
+    text-align: center;
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.equip-list {
+    display: none;
 }
 
-/* LOGIN PAGE */
-.login-box {
-  background: #151515;
-  padding: 30px;
-  border-radius: 15px;
-  width: 280px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
-  box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+.equip-list h2 {
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px #00ffcc;
 }
 
-.login-box input {
-  padding: 10px;
-  border-radius: 8px;
-  bor
+.equip-list ul {
+    list-style: none;
+}
+
+.equip-list li {
+    background: #111;
+    margin: 10px auto;
+    padding: 12px;
+    width: 80%;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #00ffcc33;
+}
+
+.back-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: #00ffcc;
+    cursor: pointer;
+}
+
+/* ABOUT & CONTACT */
+.about, .contact {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    background: black;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* HIDDEN */
+.hidden {
+    display: none;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    nav {
+        display: none;
+    }
+}
