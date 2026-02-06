@@ -2,123 +2,119 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Sports Arena</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sports Shop</title>
-
-    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<!-- 🔹 NAVBAR -->
+<!-- NAVBAR -->
 <header class="navbar">
-    <h1 class="logo">🏏 SportsHub</h1>
+    <h1 class="logo">Sports Arena</h1>
     <nav>
-        <a href="#home">Home</a>
-        <a href="#sports">Sports</a>
+        <a href="javascript:void(0)" onclick="openSports()">Sports</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <button class="login-btn" onclick="goLogin()">Login</button>
     </nav>
 </header>
 
-<!-- 🔹 HERO SECTION -->
-<section id="home" class="hero">
-    <h2>Everything You Need For Sports 🔥</h2>
-    <p>Cricket • Football • Fitness • More</p>
-    <button class="explore-btn" onclick="openSports()">Explore Now</button>
+<!-- HERO SECTION -->
+<section class="hero">
+    <h2>All Sports. One Arena.</h2>
+    <p>Premium sports equipment for champions 🏆</p>
+    <button class="explore-btn" onclick="openSports()">Explore Sports</button>
 </section>
 
-<!-- 🔹 SPORTS SECTION -->
+<!-- SPORTS SECTION -->
 <section id="sports" class="sports hidden">
-    <h2>Select Your Sport</h2>
-
+    <h2>Choose Your Sport</h2>
     <div class="sports-grid">
-        <div class="card" onclick="showEquipment('cricket')">
-            <img src="images/cricket.jpg">
-            <p>🏏 Cricket</p>
-        </div>
-
-        <div class="card" onclick="showEquipment('football')">
-            <img src="images/football.jpg">
-            <p>⚽ Football</p>
-        </div>
-
-        <div class="card" onclick="showEquipment('basketball')">
-            <img src="images/basketball.jpg">
-            <p>🏀 Basketball</p>
-        </div>
-
-        <div class="card" onclick="showEquipment('badminton')">
-            <img src="images/badminton.jpg">
-            <p>🏸 Badminton</p>
-        </div>
-
-        <div class="card" onclick="showEquipment('tennis')">
-            <img src="images/tennis.jpg">
-            <p>🎾 Tennis</p>
-        </div>
+        <div class="card" onclick="showEquipment('cricket')">🏏 Cricket</div>
+        <div class="card" onclick="showEquipment('football')">⚽ Football</div>
+        <div class="card" onclick="showEquipment('basketball')">🏀 Basketball</div>
+        <div class="card" onclick="showEquipment('tennis')">🎾 Tennis</div>
+        <div class="card" onclick="showEquipment('badminton')">🏸 Badminton</div>
     </div>
 </section>
 
-<!-- 🔹 EQUIPMENT SECTION -->
+<!-- EQUIPMENT SECTION -->
 <section id="equipment" class="equipment hidden">
 
-    <!-- CRICKET -->
     <div id="cricket" class="equip-list">
-        <h2>Cricket Equipment</h2>
+        <h2>🏏 Cricket Equipment</h2>
         <ul>
-            <li>Bat</li>
-            <li>Ball</li>
-            <li>Helmet</li>
-            <li>Gloves</li>
-            <li>Pads</li>
+            <li>Cricket Bat – ₹2,999</li>
+            <li>Cricket Ball – ₹299</li>
+            <li>Batting Gloves – ₹799</li>
+            <li>Helmet – ₹1,499</li>
         </ul>
+        <button class="back-btn" onclick="goBack()">⬅ Back</button>
     </div>
 
-    <!-- FOOTBALL -->
     <div id="football" class="equip-list">
-        <h2>Football Equipment</h2>
+        <h2>⚽ Football Equipment</h2>
         <ul>
-            <li>Football</li>
-            <li>Studs</li>
-            <li>Shin Guards</li>
-            <li>Jersey</li>
+            <li>Football – ₹1,299</li>
+            <li>Stud Shoes – ₹2,499</li>
+            <li>Shin Guards – ₹499</li>
+            <li>Goalkeeper Gloves – ₹999</li>
         </ul>
+        <button class="back-btn" onclick="goBack()">⬅ Back</button>
     </div>
 
-    <!-- BASKETBALL -->
     <div id="basketball" class="equip-list">
-        <h2>Basketball Equipment</h2>
+        <h2>🏀 Basketball Equipment</h2>
         <ul>
-            <li>Basketball</li>
-            <li>Shoes</li>
-            <li>Jersey</li>
+            <li>Basketball – ₹1,199</li>
+            <li>Basketball Shoes – ₹3,499</li>
+            <li>Wrist Bands – ₹299</li>
         </ul>
+        <button class="back-btn" onclick="goBack()">⬅ Back</button>
     </div>
 
-    <!-- BADMINTON -->
-    <div id="badminton" class="equip-list">
-        <h2>Badminton Equipment</h2>
-        <ul>
-            <li>Racket</li>
-            <li>Shuttle</li>
-            <li>Grip</li>
-        </ul>
-    </div>
-
-    <!-- TENNIS -->
     <div id="tennis" class="equip-list">
-        <h2>Tennis Equipment</h2>
+        <h2>🎾 Tennis Equipment</h2>
         <ul>
-            <li>Tennis Racket</li>
-            <li>Balls</li>
-            <li>Shoes</li>
+            <li>Tennis Racket – ₹2,199</li>
+            <li>Tennis Balls – ₹399</li>
+            <li>Grip Tape – ₹199</li>
         </ul>
+        <button class="back-btn" onclick="goBack()">⬅ Back</button>
     </div>
 
-    <button class="back-btn" onclick="goBack()">⬅ Back</button
+    <div id="badminton" class="equip-list">
+        <h2>🏸 Badminton Equipment</h2>
+        <ul>
+            <li>Badminton Racket – ₹1,799</li>
+            <li>Shuttlecocks – ₹349</li>
+            <li>Badminton Shoes – ₹2,299</li>
+        </ul>
+        <button class="back-btn" onclick="goBack()">⬅ Back</button>
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+    <h2>About Sports Arena</h2>
+    <p>Sports Arena is your one-stop destination for premium sports equipment.</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: sportsarena@gmail.com</p>
+    <p>Phone: +91 9XXXX XXXXX</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Sports Arena | Designed by You 💪</p>
+</footer>
+
+<!-- SCRIPT -->
+<script src="script.js"></script>
+
+</body>
+</html>
