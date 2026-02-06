@@ -1,90 +1,33 @@
-/* ===============================
-   CLICK SOUND
-================================ */
-const clickSound = new Audio(
-  "https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"
-);
+function showSection(id) {
+    const sections = document.querySelectorAll(".section");
+    sections.forEach(section => section.classList.remove("active"));
 
-function playSound() {
-    clickSound.currentTime = 0;
-    clickSound.play();
+    document.getElementById(id).classList.add("active");
 }
 
-/* ===============================
-   OPEN SPORTS SECTION
-================================ */
-function openSports() {
-    playSound();
-
-    // Hide other sections
-    document.getElementById("about").classList.add("hidden");
-    document.getElementById("equipment").classList.add("hidden");
-
-    // Show sports
-    const sports = document.getElementById("sports");
-    sports.classList.remove("hidden");
-    sports.scrollIntoView({ behavior: "smooth" });
-}
-
-/* ===============================
-   SHOW EQUIPMENT
-================================ */
-function showEquipment(sport) {
-    playSound();
-
-    // Hide other sections
-    document.getElementById("sports").classList.add("hidden");
-    document.getElementById("about").classList.add("hidden");
-
-    // Show equipment section
-    const equipment = document.getElementById("equipment");
-    equipment.classList.remove("hidden");
-
-    // Hide all equipment lists
-    const lists = document.querySelectorAll(".equip-list");
-    lists.forEach(list => list.style.display = "none");
-
-    // Show selected sport equipment
-    document.getElementById(sport).style.display = "block";
-
-    equipment.scrollIntoView({ behavior: "smooth" });
-}
-
-/* ===============================
-   GO BACK TO SPORTS
-================================ */
-function goBack() {
-    playSound();
-
-    // Hide equipment
-    document.getElementById("equipment").classList.add("hidden");
-
-    // Show sports
-    const sports = document.getElementById("sports");
-    sports.classList.remove("hidden");
-    sports.scrollIntoView({ behavior: "smooth" });
-}
-
-/* ===============================
-   LOGIN PAGE
-================================ */
 function goLogin() {
-    playSound();
     window.location.href = "login.html";
 }
 
-/* ===============================
-   ABOUT SECTION (FIXED)
-================================ */
-function toggleAbout() {
-    playSound();
+function openSport(sport) {
+    const box = document.getElementById("sport-details");
+    box.style.display = "block";
 
-    // Hide other sections
-    document.getElementById("sports").classList.add("hidden");
-    document.getElementById("equipment").classList.add("hidden");
+    let content = "";
 
-    // Show About
-    const about = document.getElementById("about");
-    about.classList.remove("hidden");
-    about.scrollIntoView({ behavior: "smooth" });
+    if (sport === "cricket") {
+        content = "<h3>🏏 Cricket Equipment</h3><p>Bat, Ball, Pads, Gloves, Helmet</p>";
+    } else if (sport === "football") {
+        content = "<h3>⚽ Football Equipment</h3><p>Football, Studs, Shin Guards</p>";
+    } else if (sport === "basketball") {
+        content = "<h3>🏀 Basketball Equipment</h3><p>Basketball, Shoes, Jersey</p>";
+    } else if (sport === "badminton") {
+        content = "<h3>🏸 Badminton Equipment</h3><p>Racket, Shuttle, Shoes</p>";
+    } else if (sport === "tennis") {
+        content = "<h3>🎾 Tennis Equipment</h3><p>Tennis Racket, Balls, Shoes</p>";
+    } else if (sport === "swimming") {
+        content = "<h3>🏊 Swimming Equipment</h3><p>Swimsuit, Goggles, Cap</p>";
+    }
+
+    box.innerHTML = content;
 }
