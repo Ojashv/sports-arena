@@ -1,91 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sports Arena</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Shop</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- 🔹 NAVBAR -->
 <header class="navbar">
-  <h1>🏟️ Sports Arena</h1>
-  <a href="login.html" style="color:#00ffcc; text-decoration:none; font-weight:bold;">
-    Login
-  </a>
+    <h1 class="logo">🏏 SportsHub</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#sports">Sports</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="login-btn" onclick="goLogin()">Login</button>
+    </nav>
 </header>
 
-<!-- HERO SECTION -->
-<section class="hero">
-  <h2>Play. Train. Win.</h2>
-  <p>Your one-stop sports equipment store</p>
-  <button onclick="scrollToSection('sports')">Explore Sports</button>
+<!-- 🔹 HERO SECTION -->
+<section id="home" class="hero">
+    <h2>Everything You Need For Sports 🔥</h2>
+    <p>Cricket • Football • Fitness • More</p>
+    <button class="explore-btn" onclick="openSports()">Explore Now</button>
 </section>
 
-<!-- SPORTS SECTION -->
-<section id="sports" class="section">
-  <h2>Choose Your Sport</h2>
+<!-- 🔹 SPORTS SECTION -->
+<section id="sports" class="sports hidden">
+    <h2>Select Your Sport</h2>
 
-  <div class="sports-grid">
-    <div class="card" onclick="showEquipment('cricket')">
-      <img src="images/cricket.jpg">
-      <p>🏏 Cricket</p>
-    </div>
+    <div class="sports-grid">
+        <div class="card" onclick="showEquipment('cricket')">
+            <img src="images/cricket.jpg">
+            <p>🏏 Cricket</p>
+        </div>
 
-    <div class="card" onclick="showEquipment('football')">
-      <img src="images/football.jpg">
-      <p>⚽ Football</p>
-    </div>
+        <div class="card" onclick="showEquipment('football')">
+            <img src="images/football.jpg">
+            <p>⚽ Football</p>
+        </div>
 
-    <div class="card" onclick="showEquipment('basketball')">
-      <img src="images/basketball.jpg">
-      <p>🏀 Basketball</p>
-    </div>
+        <div class="card" onclick="showEquipment('basketball')">
+            <img src="images/basketball.jpg">
+            <p>🏀 Basketball</p>
+        </div>
 
-    <div class="card" onclick="showEquipment('tennis')">
-      <img src="images/tennis.jpg">
-      <p>🎾 Tennis</p>
-    </div>
+        <div class="card" onclick="showEquipment('badminton')">
+            <img src="images/badminton.jpg">
+            <p>🏸 Badminton</p>
+        </div>
 
-    <div class="card" onclick="showEquipment('volleyball')">
-      <img src="images/volleyball.jpg">
-      <p>🏐 Volleyball</p>
+        <div class="card" onclick="showEquipment('tennis')">
+            <img src="images/tennis.jpg">
+            <p>🎾 Tennis</p>
+        </div>
     </div>
-
-    <div class="card" onclick="showEquipment('badminton')">
-      <img src="images/badminton.jpg">
-      <p>🏸 Badminton</p>
-    </div>
-
-    <div class="card" onclick="showEquipment('swimming')">
-      <img src="images/swimming.jpg">
-      <p>🏊 Swimming</p>
-    </div>
-
-    <div class="card" onclick="showEquipment('tabletennis')">
-      <img src="images/tabletennis.jpg">
-      <p>🏓 Table Tennis</p>
-    </div>
-
-    <div class="card" onclick="showEquipment('boxing')">
-      <img src="images/boxing.jpg">
-      <p>🥊 Boxing</p>
-    </div>
-
-    <div class="card" onclick="showEquipment('athletics')">
-      <img src="images/athletics.jpg">
-      <p>🏃 Athletics</p>
-    </div>
-  </div>
 </section>
 
-<!-- EQUIPMENT SECTION -->
-<section id="equipment" class="section">
-  <h2>Equipment</h2>
+<!-- 🔹 EQUIPMENT SECTION -->
+<section id="equipment" class="equipment hidden">
 
-  <div id="cricket" class="equipment">Bat · Ball · Pads · Helmet · Gloves</div>
-  <div id="football" class="equipment">Football · Shoes · Shin Guards</div>
-  <div id="basketball" class="equipment">Basketball · Shoes · Jersey</div>
-  <div id="tennis" class="equipment">R
+    <!-- CRICKET -->
+    <div id="cricket" class="equip-list">
+        <h2>Cricket Equipment</h2>
+        <ul>
+            <li>Bat</li>
+            <li>Ball</li>
+            <li>Helmet</li>
+            <li>Gloves</li>
+            <li>Pads</li>
+        </ul>
+    </div>
+
+    <!-- FOOTBALL -->
+    <div id="football" class="equip-list">
+        <h2>Football Equipment</h2>
+        <ul>
+            <li>Football</li>
+            <li>Studs</li>
+            <li>Shin Guards</li>
+            <li>Jersey</li>
+        </ul>
+    </div>
+
+    <!-- BASKETBALL -->
+    <div id="basketball" class="equip-list">
+        <h2>Basketball Equipment</h2>
+        <ul>
+            <li>Basketball</li>
+            <li>Shoes</li>
+            <li>Jersey</li>
+        </ul>
+    </div>
+
+    <!-- BADMINTON -->
+    <div id="badminton" class="equip-list">
+        <h2>Badminton Equipment</h2>
+        <ul>
+            <li>Racket</li>
+            <li>Shuttle</li>
+            <li>Grip</li>
+        </ul>
+    </div>
+
+    <!-- TENNIS -->
+    <div id="tennis" class="equip-list">
+        <h2>Tennis Equipment</h2>
+        <ul>
+            <li>Tennis Racket</li>
+            <li>Balls</li>
+            <li>Shoes</li>
+        </ul>
+    </div>
+
+    <button class="back-btn" onclick="goBack()">⬅ Back</button
