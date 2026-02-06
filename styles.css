@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
 }
 
 body {
@@ -21,6 +21,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 0 10px #00ffcc55;
 }
 
 .logo {
@@ -42,9 +43,10 @@ nav a:hover {
 .login-btn {
     background: #00ffcc;
     border: none;
-    padding: 8px 14px;
+    padding: 8px 16px;
     border-radius: 20px;
     cursor: pointer;
+    box-shadow: 0 0 10px #00ffcc;
 }
 
 /* HERO */
@@ -59,17 +61,18 @@ nav a:hover {
 }
 
 .hero h2 {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
     text-shadow: 0 0 15px #00ffcc;
 }
 
 .hero p {
     margin: 10px 0 20px;
+    opacity: 0.9;
 }
 
 .explore-btn {
     background: #00ffcc;
-    padding: 14px 28px;
+    padding: 14px 30px;
     border: none;
     border-radius: 30px;
     font-size: 1rem;
@@ -83,10 +86,6 @@ nav a:hover {
     text-align: center;
 }
 
-.sports h2 {
-    margin-bottom: 20px;
-}
-
 .sports-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -95,18 +94,11 @@ nav a:hover {
 
 .card {
     background: #111;
+    padding: 20px;
     border-radius: 20px;
-    padding: 15px;
     cursor: pointer;
     transition: 0.3s;
     box-shadow: 0 0 10px #00ffcc33;
-}
-
-.card img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 15px;
 }
 
 .card:hover {
@@ -137,18 +129,19 @@ nav a:hover {
     background: #111;
     margin: 10px auto;
     padding: 12px;
-    width: 80%;
+    width: 85%;
     border-radius: 20px;
     box-shadow: 0 0 10px #00ffcc33;
 }
 
 .back-btn {
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 10px 22px;
     border: none;
     border-radius: 25px;
     background: #00ffcc;
     cursor: pointer;
+    box-shadow: 0 0 10px #00ffcc;
 }
 
 /* ABOUT & CONTACT */
