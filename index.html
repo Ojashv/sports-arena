@@ -6,124 +6,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-  <header class="navbar">
-    <h1 class="logo">🏟 Sports Arena</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#sports">Sports</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<!-- NAVBAR -->
+<header class="navbar">
+  <h1 class="logo">🏟️ Sports Arena</h1>
+</header>
 
-  <section id="home" class="hero">
-    <h2>Welcome to Sports Arena</h2>
-    <p>A modern hub for all sports lovers</p>
-    <button onclick="scrollToSection('sports')">Explore Sports</button>
-  </section>
+<!-- HOME -->
+<section id="home" class="hero">
+  <h2>Welcome to Sports Arena</h2>
+  <p>Your modern hub for all sports & equipment</p>
+  <button onclick="scrollToSection('choose-sport')">Explore Sports</button>
+</section>
 
-  <section id="about" class="section">
-    <h2>About</h2>
-    <p>
-      Sports Arena is a creative sports website made using HTML, CSS and JavaScript.
-      It showcases popular sports in a modern black themed design with smooth scrolling.
-    </p>
-  </section>
+<!-- CHOOSE SPORT -->
+<section id="choose-sport" class="section">
+  <h2>Choose a Sport</h2>
 
-  <section id="sports" class="section">
-    <h2>All Sports</h2>
-    <div class="sports-grid">
-      <div class="card">🏏 Cricket</div>
-      <div class="card">⚽ Football</div>
-      <div class="card">🏀 Basketball</div>
-      <div class="card">🎾 Tennis</div>
-      <div class="card">🏐 Volleyball</div>
-      <div class="card">🏸 Badminton</div>
-      <div class="card">🏊 Swimming</div>
-      <div class="card">🏓 Table Tennis</div>
-      <div class="card">🥊 Boxing</div>
-      <div class="card">🏃 Athletics</div>
-    </div>
-  </section>
+  <div class="sports-grid">
+    <div class="card" onclick="showEquipment('cricket')">🏏 Cricket</div>
+    <div class="card" onclick="showEquipment('football')">⚽ Football</div>
+    <div class="card" onclick="showEquipment('basketball')">🏀 Basketball</div>
+    <div class="card" onclick="showEquipment('tennis')">🎾 Tennis</div>
+    <div class="card" onclick="showEquipment('volleyball')">🏐 Volleyball</div>
+    <div class="card" onclick="showEquipment('badminton')">🏸 Badminton</div>
+    <div class="card" onclick="showEquipment('swimming')">🏊 Swimming</div>
+    <div class="card" onclick="showEquipment('tabletennis')">🏓 Table Tennis</div>
+    <div class="card" onclick="showEquipment('boxing')">🥊 Boxing</div>
+    <div class="card" onclick="showEquipment('athletics')">🏃 Athletics</div>
+  </div>
+</section>
 
+<!-- EQUIPMENT SECTION -->
+<section id="equipment" class="section">
+  <h2>Sports Equipment</h2>
 
-  <div class="equipment-category">
+  <div id="cricket" class="equipment-list">
     <h3>🏏 Cricket</h3>
-    <div class="sports-grid">
-      <div class="card">Bat</div>
-      <div class="card">Ball</div>
-      <div class="card">Pads</div>
-      <div class="card">Helmet</div>
-      <div class="card">Gloves</div>
-    </div>
+    <p>Bat · Ball · Pads · Helmet · Gloves</p>
   </div>
 
-  <div class="equipment-category">
+  <div id="football" class="equipment-list">
     <h3>⚽ Football</h3>
-    <div class="sports-grid">
-      <div class="card">Football</div>
-      <div class="card">Studs</div>
-      <div class="card">Shin Guards</div>
-      <div class="card">Goal Net</div>
-    </div>
+    <p>Football · Shoes · Shin Guards · Goalkeeper Gloves</p>
+  </div>
+
+  <div id="basketball" class="equipment-list">
+    <h3>🏀 Basketball</h3>
+    <p>Basketball · Shoes · Jersey</p>
+  </div>
+
+  <div id="tennis" class="equipment-list">
+    <h3>🎾 Tennis</h3>
+    <p>Racket · Tennis Ball · Shoes</p>
+  </div>
+
+  <div id="volleyball" class="equipment-list">
+    <h3>🏐 Volleyball</h3>
+    <p>Volleyball · Knee Pads · Shoes</p>
+  </div>
+
+  <div id="badminton" class="equipment-list">
+    <h3>🏸 Badminton</h3>
+    <p>Racket · Shuttlecock · Net · Shoes</p>
+  </div>
+
+  <div id="swimming" class="equipment-list">
+    <h3>🏊 Swimming</h3>
+    <p>Swimsuit · Goggles · Cap</p>
+  </div>
+
+  <div id="tabletennis" class="equipment-list">
+    <h3>🏓 Table Tennis</h3>
+    <p>Bat · Ball · Table</p>
+  </div>
+
+  <div id="boxing" class="equipment-list">
+    <h3>🥊 Boxing</h3>
+    <p>Gloves · Punching Bag · Head Guard</p>
+  </div>
+
+  <div id="athletics" class="equipment-list">
+    <h3>🏃 Athletics</h3>
+    <p>Running Shoes · Stopwatch · Track Gear</p>
   </div>
 </section>
 
+<!-- FOOTER -->
+<footer>
+  <p>
+    Designed by Ojashvi Shukla <br>
+    Class 10 – ICSE <br>
+    FOR PURCHASING SPORTS ITEMS
+  </p>
+</footer>
 
-  <section id="equipment" class="section">
-  <h2>Sports & Equipments</h2>
-
-  <h3>🏏 Cricket</h3>
-  <p>Bat, Ball, Pads, Helmet, Gloves</p>
-
-  <h3>⚽ Football</h3>
-  <p>Football, Shoes, Shin Guards, Goalkeeper Gloves</p>
-
-  <h3>🏀 Basketball</h3>
-  <p>Basketball, Shoes, Jersey</p>
-
-  <h3>🎾 Tennis</h3>
-  <p>Racket, Tennis Ball, Shoes</p>
-
-  <h3>🏐 Volleyball</h3>
-  <p>Volleyball, Knee Pads, Shoes</p>
-
-  <h3>🏸 Badminton</h3>
-  <p>Racket, Shuttlecock, Net, Shoes</p>
-
-  <h3>🏊 Swimming</h3>
-  <p>Swimsuit, Goggles, Cap</p>
-
-  <h3>🏓 Table Tennis</h3>
-  <p>Bat, Ball, Table</p>
-
-  <h3>🥊 Boxing</h3>
-  <p>Gloves, Punching Bag, Head Guard</p>
-
-  <h3>🏃 Athletics</h3>
-  <p>Running Shoes, Stopwatch, Track Gear</p>
-</section>
-
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <form onsubmit="submitForm(event)">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>
-      Designed by Ojashvi Shukla <br>
-      Class 10 – ICSE <br>
-      For purchasing sports items
-    </p>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
