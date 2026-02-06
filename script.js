@@ -1,11 +1,14 @@
-const clickSound = new Audio("https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3");
+/* CLICK SOUND */
+const clickSound = new Audio(
+  "https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"
+);
 
 function playSound() {
     clickSound.currentTime = 0;
     clickSound.play();
 }
 
-/* EXPLORE BUTTON */
+/* OPEN SPORTS */
 function openSports() {
     playSound();
     document.getElementById("sports").classList.remove("hidden");
@@ -24,10 +27,11 @@ function showEquipment(sport) {
 
     document.getElementById(sport).style.display = "block";
 
-    document.getElementById("equipment").scrollIntoView({ behavior: "smooth" });
+    document.getElementById("equipment")
+        .scrollIntoView({ behavior: "smooth" });
 }
 
-/* BACK BUTTON */
+/* GO BACK */
 function goBack() {
     playSound();
     document.getElementById("equipment").classList.add("hidden");
