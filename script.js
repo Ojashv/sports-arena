@@ -1,15 +1,45 @@
+/* Smooth scroll to any section */
 function scrollToSection(id) {
-  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
 }
 
+/* Show equipment for selected sport with animation */
 function showEquipment(sport) {
-  document.getElementById("clickSound").play();
+  // Play click sound if available
+  const sound = document.getElementById("clickSound");
+  if (sound) {
+    sound.currentTime = 0;
+    sound.play();
+  }
 
-  let items = document.querySelectorAll(".equipment");
-  items.forEach(i => i.style.display = "none");
+  // Hide all equipment sections
+  const allEquipment = document.querySelectorAll(".equipment");
+  allEquipment.forEach(item => {
+    item.style.display = "none";
+  });
 
-  let selected = document.getElementById(sport);
-  selected.style.display = "block";
+  // Show selected sport equipment
+  const selected = document.getElementById(sport);
+  if (selected) {
+    selected.style.display = "block";
+  }
 
-  document.getElementById("equipment").scrollIntoView({ behavior: "smooth" });
+  // Scroll smoothly to equipment section
+  const equipmentSection = document.getElementById("equipment");
+  if (equipmentSection) {
+    equipmentSection.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+/* Demo login function (for school project) */
+function login(event) {
+  event.preventDefault(); // stop page reload
+
+  alert("Login successful! (Demo)");
+  
+  // Redirect to home page
+  window.location.href = "index.html";
 }
