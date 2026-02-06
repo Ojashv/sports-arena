@@ -43,3 +43,11 @@ function goLogin() {
     playSound();
     window.location.href = "login.html";
 }
+
+/* TOGGLE ABOUT */
+function toggleAbout() {
+    playSound();
+    const about = document.getElementById("about");
+    about.classList.toggle("hidden");
+    about.scrollIntoView({ behavior: "smooth" });
+}
