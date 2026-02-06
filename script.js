@@ -1,33 +1,43 @@
+// SHOW SECTIONS WITH ANIMATION
 function showSection(id) {
     const sections = document.querySelectorAll(".section");
-    sections.forEach(section => section.classList.remove("active"));
+    sections.forEach(section => {
+        section.classList.remove("active");
+    });
 
-    document.getElementById(id).classList.add("active");
+    const target = document.getElementById(id);
+    if (target) {
+        target.classList.add("active");
+    }
 }
 
+// GO TO LOGIN PAGE
 function goLogin() {
     window.location.href = "login.html";
 }
 
+// GO BACK TO HOME
+function goHome() {
+    window.location.href = "index.html";
+}
+
+// OPEN SPORT DETAILS
 function openSport(sport) {
     const box = document.getElementById("sport-details");
+    if (!box) return;
+
+    const equipment = {
+        cricket: "Bat, Ball, Pads, Gloves, Helmet",
+        football: "Football, Studs, Shin Guards",
+        basketball: "Basketball, Shoes, Jersey",
+        badminton: "Racket, Shuttle, Shoes",
+        tennis: "Tennis Racket, Balls, Shoes",
+        swimming: "Goggles, Cap, Swimwear"
+    };
+
     box.style.display = "block";
-
-    let content = "";
-
-    if (sport === "cricket") {
-        content = "<h3>🏏 Cricket Equipment</h3><p>Bat, Ball, Pads, Gloves, Helmet</p>";
-    } else if (sport === "football") {
-        content = "<h3>⚽ Football Equipment</h3><p>Football, Studs, Shin Guards</p>";
-    } else if (sport === "basketball") {
-        content = "<h3>🏀 Basketball Equipment</h3><p>Basketball, Shoes, Jersey</p>";
-    } else if (sport === "badminton") {
-        content = "<h3>🏸 Badminton Equipment</h3><p>Racket, Shuttle, Shoes</p>";
-    } else if (sport === "tennis") {
-        content = "<h3>🎾 Tennis Equipment</h3><p>Tennis Racket, Balls, Shoes</p>";
-    } else if (sport === "swimming") {
-        content = "<h3>🏊 Swimming Equipment</h3><p>Swimsuit, Goggles, Cap</p>";
-    }
-
-    box.innerHTML = content;
+    box.innerHTML = `
+        <h3>${sport.toUpperCase()}</h3>
+        <p>${equipment[sport]}</p>
+    `;
 }
