@@ -1,45 +1,41 @@
-/* Smooth scroll to any section */
-function scrollToSection(id) {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
+const clickSound = new Audio("https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3");
+
+function playSound() {
+    clickSound.currentTime = 0;
+    clickSound.play();
 }
 
-/* Show equipment for selected sport with animation */
+/* EXPLORE BUTTON */
+function openSports() {
+    playSound();
+    document.getElementById("sports").classList.remove("hidden");
+    document.getElementById("sports").scrollIntoView({ behavior: "smooth" });
+}
+
+/* SHOW EQUIPMENT */
 function showEquipment(sport) {
-  // Play click sound if available
-  const sound = document.getElementById("clickSound");
-  if (sound) {
-    sound.currentTime = 0;
-    sound.play();
-  }
+    playSound();
 
-  // Hide all equipment sections
-  const allEquipment = document.querySelectorAll(".equipment");
-  allEquipment.forEach(item => {
-    item.style.display = "none";
-  });
+    document.getElementById("sports").classList.add("hidden");
+    document.getElementById("equipment").classList.remove("hidden");
 
-  // Show selected sport equipment
-  const selected = document.getElementById(sport);
-  if (selected) {
-    selected.style.display = "block";
-  }
+    let lists = document.querySelectorAll(".equip-list");
+    lists.forEach(list => list.style.display = "none");
 
-  // Scroll smoothly to equipment section
-  const equipmentSection = document.getElementById("equipment");
-  if (equipmentSection) {
-    equipmentSection.scrollIntoView({ behavior: "smooth" });
-  }
+    document.getElementById(sport).style.display = "block";
+
+    document.getElementById("equipment").scrollIntoView({ behavior: "smooth" });
 }
 
-/* Demo login function (for school project) */
-function login(event) {
-  event.preventDefault(); // stop page reload
+/* BACK BUTTON */
+function goBack() {
+    playSound();
+    document.getElementById("equipment").classList.add("hidden");
+    document.getElementById("sports").classList.remove("hidden");
+}
 
-  alert("Login successful! (Demo)");
-  
-  // Redirect to home page
-  window.location.href = "index.html";
+/* LOGIN */
+function goLogin() {
+    playSound();
+    window.location.href = "login.html";
 }
