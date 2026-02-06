@@ -1,4 +1,6 @@
-/* CLICK SOUND */
+/* ===============================
+   CLICK SOUND
+================================ */
 const clickSound = new Audio(
   "https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"
 );
@@ -8,46 +10,81 @@ function playSound() {
     clickSound.play();
 }
 
-/* OPEN SPORTS */
+/* ===============================
+   OPEN SPORTS SECTION
+================================ */
 function openSports() {
     playSound();
-    document.getElementById("sports").classList.remove("hidden");
-    document.getElementById("sports").scrollIntoView({ behavior: "smooth" });
+
+    // Hide other sections
+    document.getElementById("about").classList.add("hidden");
+    document.getElementById("equipment").classList.add("hidden");
+
+    // Show sports
+    const sports = document.getElementById("sports");
+    sports.classList.remove("hidden");
+    sports.scrollIntoView({ behavior: "smooth" });
 }
 
-/* SHOW EQUIPMENT */
+/* ===============================
+   SHOW EQUIPMENT
+================================ */
 function showEquipment(sport) {
     playSound();
 
+    // Hide other sections
     document.getElementById("sports").classList.add("hidden");
-    document.getElementById("equipment").classList.remove("hidden");
+    document.getElementById("about").classList.add("hidden");
 
-    let lists = document.querySelectorAll(".equip-list");
+    // Show equipment section
+    const equipment = document.getElementById("equipment");
+    equipment.classList.remove("hidden");
+
+    // Hide all equipment lists
+    const lists = document.querySelectorAll(".equip-list");
     lists.forEach(list => list.style.display = "none");
 
+    // Show selected sport equipment
     document.getElementById(sport).style.display = "block";
 
-    document.getElementById("equipment")
-        .scrollIntoView({ behavior: "smooth" });
+    equipment.scrollIntoView({ behavior: "smooth" });
 }
 
-/* GO BACK */
+/* ===============================
+   GO BACK TO SPORTS
+================================ */
 function goBack() {
     playSound();
+
+    // Hide equipment
     document.getElementById("equipment").classList.add("hidden");
-    document.getElementById("sports").classList.remove("hidden");
+
+    // Show sports
+    const sports = document.getElementById("sports");
+    sports.classList.remove("hidden");
+    sports.scrollIntoView({ behavior: "smooth" });
 }
 
-/* LOGIN */
+/* ===============================
+   LOGIN PAGE
+================================ */
 function goLogin() {
     playSound();
     window.location.href = "login.html";
 }
 
-/* TOGGLE ABOUT */
+/* ===============================
+   ABOUT SECTION (FIXED)
+================================ */
 function toggleAbout() {
     playSound();
+
+    // Hide other sections
+    document.getElementById("sports").classList.add("hidden");
+    document.getElementById("equipment").classList.add("hidden");
+
+    // Show About
     const about = document.getElementById("about");
-    about.classList.toggle("hidden");
+    about.classList.remove("hidden");
     about.scrollIntoView({ behavior: "smooth" });
 }
