@@ -3,121 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>Sports Arena</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <!-- NAVBAR -->
-<header class="navbar">
-    <h1 class="logo">Sports Arena</h1>
-    <nav>
-        <a href="javascript:void(0)" onclick="openSports()">Sports</a>
-        <a href="javascript:void(0)" onclick="toggleAbout()">About</a>
-        <a href="#contact">Contact</a>
-        <button class="login-btn" onclick="goLogin()">Login</button>
-    </nav>
-</header>
+<nav class="navbar">
+    <h1 class="logo">🏆 Sports Arena</h1>
+    <div class="nav-buttons">
+        <button onclick="showSection('home')">Home</button>
+        <button onclick="showSection('sports')">Sports</button>
+        <button onclick="showSection('about')">About</button>
+        <button onclick="goLogin()">Login</button>
+    </div>
+</nav>
 
-<!-- HERO -->
-<section class="hero">
-    <h2>All Sports. One Arena.</h2>
-    <p>Premium sports equipment for champions 🏆</p>
-    <button class="explore-btn" onclick="openSports()">Explore Sports</button>
+<!-- HOME -->
+<section id="home" class="section active">
+    <h2 class="fade">Welcome to Sports Arena</h2>
+    <p class="fade">All sports. One place.</p>
+    <button class="explore-btn fade" onclick="showSection('sports')">Explore</button>
 </section>
 
 <!-- SPORTS -->
-<section id="sports" class="sports hidden">
-    <h2>Choose Your Sport</h2>
-    <div class="sports-grid">
-        <div class="card" onclick="showEquipment('cricket')">🏏 Cricket</div>
-        <div class="card" onclick="showEquipment('football')">⚽ Football</div>
-        <div class="card" onclick="showEquipment('basketball')">🏀 Basketball</div>
-        <div class="card" onclick="showEquipment('tennis')">🎾 Tennis</div>
-        <div class="card" onclick="showEquipment('badminton')">🏸 Badminton</div>
+<section id="sports" class="section">
+    <h2 class="fade">Choose a Sport</h2>
+
+    <div class="sports-grid fade">
+        <button onclick="openSport('cricket')">🏏 Cricket</button>
+        <button onclick="openSport('football')">⚽ Football</button>
+        <button onclick="openSport('basketball')">🏀 Basketball</button>
+        <button onclick="openSport('badminton')">🏸 Badminton</button>
+        <button onclick="openSport('tennis')">🎾 Tennis</button>
+        <button onclick="openSport('swimming')">🏊 Swimming</button>
     </div>
+
+    <div id="sport-details" class="sport-details fade"></div>
 </section>
 
-<!-- EQUIPMENT -->
-<section id="equipment" class="equipment hidden">
-
-    <div id="cricket" class="equip-list">
-        <h2>🏏 Cricket Equipment</h2>
-        <ul>
-            <li>Cricket Bat – ₹2,999</li>
-            <li>Cricket Ball – ₹299</li>
-            <li>Batting Gloves – ₹799</li>
-            <li>Helmet – ₹1,499</li>
-        </ul>
-        <button class="back-btn" onclick="goBack()">⬅ Back</button>
-    </div>
-
-    <div id="football" class="equip-list">
-        <h2>⚽ Football Equipment</h2>
-        <ul>
-            <li>Football – ₹1,299</li>
-            <li>Stud Shoes – ₹2,499</li>
-            <li>Shin Guards – ₹499</li>
-            <li>Goalkeeper Gloves – ₹999</li>
-        </ul>
-        <button class="back-btn" onclick="goBack()">⬅ Back</button>
-    </div>
-
-    <div id="basketball" class="equip-list">
-        <h2>🏀 Basketball Equipment</h2>
-        <ul>
-            <li>Basketball – ₹1,199</li>
-            <li>Basketball Shoes – ₹3,499</li>
-            <li>Wrist Bands – ₹299</li>
-        </ul>
-        <button class="back-btn" onclick="goBack()">⬅ Back</button>
-    </div>
-
-    <div id="tennis" class="equip-list">
-        <h2>🎾 Tennis Equipment</h2>
-        <ul>
-            <li>Tennis Racket – ₹2,199</li>
-            <li>Tennis Balls – ₹399</li>
-            <li>Grip Tape – ₹199</li>
-        </ul>
-        <button class="back-btn" onclick="goBack()">⬅ Back</button>
-    </div>
-
-    <div id="badminton" class="equip-list">
-        <h2>🏸 Badminton Equipment</h2>
-        <ul>
-            <li>Badminton Racket – ₹1,799</li>
-            <li>Shuttlecocks – ₹349</li>
-            <li>Badminton Shoes – ₹2,299</li>
-        </ul>
-        <button class="back-btn" onclick="goBack()">⬅ Back</button>
-    </div>
-
-</section>
-
-<!-- ABOUT (CLICK TO SHOW) -->
-<section id="about" class="about hidden">
-    <h2>About Sports Arena</h2>
-    <p>
-        Sports Arena is a modern sports equipment website designed for students and beginners.
-        It helps users explore different sports and understand the equipment used in each sport.
-    </p>
-    <p>
-        This project is created using HTML, CSS, and JavaScript and is suitable for school projects,
-        practical exams, and learning web development.
+<!-- ABOUT -->
+<section id="about" class="section">
+    <h2 class="fade">About Sports Arena</h2>
+    <p class="fade about-text">
+        Sports Arena is a modern animated sports website created as a school project.
+        <br><br>
+        ✦ Smooth animations  
+        <br>
+        ✦ Clean black design  
+        <br>
+        ✦ Easy navigation  
+        <br><br>
+        Built using HTML, CSS & JavaScript.
     </p>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <p>Email: ojasvi.shuklag@gmail.com</p>
-    <p>Phone: +91 91257 21772</p>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <p>© 2026 Sports Arena | Designed by You 💪</p>
+<!-- FOOTER WITH YOUR DETAILS -->
+<footer class="footer fade">
+    <p>👤 Created by: <strong>Ojashvi Shukla</strong></p>
+    <p>📞 Mobile: <strong>9125721773</strong></p>
 </footer>
 
 <script src="script.js"></script>
