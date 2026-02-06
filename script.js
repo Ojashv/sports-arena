@@ -5,8 +5,12 @@ function scrollToSection(id) {
 }
 
 function showEquipment(sport) {
-  let lists = document.querySelectorAll(".equipment-list");
-  lists.forEach(list => list.style.display = "none");
+  let all = document.querySelectorAll(".equipment-list");
+  all.forEach(item => item.style.display = "none");
+
+  document.getElementById("equipment").scrollIntoView({
+    behavior: "smooth"
+  });
 
   document.getElementById(sport).style.display = "block";
 }
