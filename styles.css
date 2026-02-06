@@ -92,6 +92,51 @@ body {
   font-size: 2.5rem;
   color: #00ffcc;
 }
+/* ===== Equipment Section ===== */
+.section {
+  padding: 60px 20px;
+  background-color: #0b0b0b;
+  color: white;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+.section h3 {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: #00ffcc;
+  text-align: center;
+}
+
+/* Grid for cards */
+.section p {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin: 0;
+}
+
+/* Individual card */
+.section p span,
+.section p {
+  background: #151515;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect */
+.section p:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.6);
+}
+
 
 /* SPORTS GRID */
 .sports-grid {
