@@ -13,20 +13,20 @@
     <h1 class="logo">Sports Arena</h1>
     <nav>
         <a href="javascript:void(0)" onclick="openSports()">Sports</a>
-        <a href="#about">About</a>
+        <a href="javascript:void(0)" onclick="toggleAbout()">About</a>
         <a href="#contact">Contact</a>
         <button class="login-btn" onclick="goLogin()">Login</button>
     </nav>
 </header>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <section class="hero">
     <h2>All Sports. One Arena.</h2>
     <p>Premium sports equipment for champions 🏆</p>
     <button class="explore-btn" onclick="openSports()">Explore Sports</button>
 </section>
 
-<!-- SPORTS SECTION -->
+<!-- SPORTS -->
 <section id="sports" class="sports hidden">
     <h2>Choose Your Sport</h2>
     <div class="sports-grid">
@@ -38,7 +38,7 @@
     </div>
 </section>
 
-<!-- EQUIPMENT SECTION -->
+<!-- EQUIPMENT -->
 <section id="equipment" class="equipment hidden">
 
     <div id="cricket" class="equip-list">
@@ -95,26 +95,18 @@
 
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="about">
+<!-- ABOUT (CLICK TO SHOW) -->
+<section id="about" class="about hidden">
     <h2>About Sports Arena</h2>
-    <p>Sports Arena is your one-stop destination for premium sports equipment.</p>
+    <p>
+        Sports Arena is a modern sports equipment website designed for students and beginners.
+        It helps users explore different sports and understand the equipment used in each sport.
+    </p>
+    <p>
+        This project is created using HTML, CSS, and JavaScript and is suitable for school projects,
+        practical exams, and learning web development.
+    </p>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <p>Email: sportsarena@gmail.com</p>
-    <p>Phone: +91 9XXXX XXXXX</p>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <p>© 2026 Sports Arena | Designed by You 💪</p>
-</footer>
-
-<!-- SCRIPT -->
-<script src="script.js"></script>
-
-</body>
-</html>
+<section id="cont
