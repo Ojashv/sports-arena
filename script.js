@@ -2,9 +2,10 @@
 // SECTION NAVIGATION
 // ===============================
 function showSection(id) {
-  document.querySelectorAll(".section").forEach(sec =>
-    sec.classList.remove("active")
-  );
+  document.querySelectorAll(".section").forEach(sec => {
+    sec.classList.remove("active");
+  });
+
   const target = document.getElementById(id);
   if (target) target.classList.add("active");
 }
@@ -18,7 +19,7 @@ function goHome() {
 }
 
 // ===============================
-// DATA
+// PRODUCT DATA
 // ===============================
 const products = {
   cricket: [
@@ -47,10 +48,13 @@ const products = {
   ]
 };
 
+// ===============================
+// CART STORAGE
+// ===============================
 let cart = [];
 
 // ===============================
-// OPEN SPORT
+// OPEN SPORT → SHOW PRODUCTS
 // ===============================
 function openSport(sport) {
   showSection("products");
@@ -65,36 +69,40 @@ function openSport(sport) {
     const card = document.createElement("div");
     card.className = "product";
 
+    const basePrice = 1000;
+
     card.innerHTML = `
       <h3>${item}</h3>
 
       <label>Size</label>
       <select class="size">
         <option value="0">Standard</option>
-        <option value="100">Medium (+₹100)</option>
-        <option value="200">Large (+₹200)</option>
+        <option value="150">Medium (+₹150)</option>
+        <option value="300">Large (+₹300)</option>
       </select>
 
       <label>Quality</label>
       <select class="quality">
         <option value="0">Normal</option>
-        <option value="300">Premium (+₹300)</option>
+        <option value="400">Premium (+₹400)</option>
       </select>
 
-      <p class="price">₹1000</p>
+      <p class="price">₹${basePrice}</p>
 
       <button class="add-btn">Add to Cart</button>
     `;
 
-    const priceEl = card.querySelector(".price");
     const sizeEl = card.querySelector(".size");
     const qualityEl = card.querySelector(".quality");
+    const priceEl = card.querySelector(".price");
     const addBtn = card.querySelector(".add-btn");
 
     function updatePrice() {
-      const base = 1000;
       const total =
-        base + Number(sizeEl.value) + Number(qualityEl.value);
+        basePrice +
+        Number(sizeEl.value) +
+        Number(qualityEl.value);
+
       priceEl.innerText = "₹" + total;
     }
 
@@ -104,9 +112,11 @@ function openSport(sport) {
     addBtn.addEventListener("click", () => {
       cart.push({
         name: item,
+        size: sizeEl.options[sizeEl.selectedIndex].text,
+        quality: qualityEl.options[qualityEl.selectedIndex].text,
         price: priceEl.innerText
       });
-      alert(item + " added to cart");
+      alert(item + " added to cart ✅");
     });
 
     list.appendChild(card);
@@ -114,7 +124,7 @@ function openSport(sport) {
 }
 
 // ===============================
-// CART PAGE LOGIC (READY)
+// OPEN CART
 // ===============================
 function openCart() {
   showSection("cart");
@@ -125,16 +135,24 @@ function openCart() {
   cartList.innerHTML = "";
   let total = 0;
 
+  if (cart.length === 0) {
+    cartList.innerHTML = "<p>Your cart is empty</p>";
+    totalEl.innerText = "Total: ₹0";
+    return;
+  }
+
   cart.forEach((item, index) => {
-    const price = Number(item.price.replace("₹", ""));
-    total += price;
+    const priceNum = Number(item.price.replace("₹", ""));
+    total += priceNum;
 
     const row = document.createElement("div");
     row.className = "product";
 
     row.innerHTML = `
       <h3>${item.name}</h3>
-      <p>${item.price}</p>
+      <p>Size: ${item.size}</p>
+      <p>Quality: ${item.quality}</p>
+      <p class="price">${item.price}</p>
       <button onclick="removeItem(${index})">Remove</button>
     `;
 
@@ -144,6 +162,9 @@ function openCart() {
   totalEl.innerText = "Total: ₹" + total;
 }
 
+// ===============================
+// REMOVE ITEM
+// ===============================
 function removeItem(index) {
   cart.splice(index, 1);
   openCart();
