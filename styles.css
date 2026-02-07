@@ -129,11 +129,9 @@ body {
 .product {
   background: #111;
   padding: 22px;
-  border-radius: 14px;
+  border-radius: 12px;
   border: 1px solid #222;
-  cursor: pointer;
   transition: 0.3s;
-  position: relative;
 }
 
 .product:hover {
@@ -142,44 +140,44 @@ body {
 }
 
 .product h3 {
-  margin-top: 10px;
+  margin-bottom: 12px;
   font-size: 1.05rem;
 }
 
-.product p {
-  margin-top: 6px;
+/* PRODUCT CONTROLS */
+.product label {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.product select {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  background: #000;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+.price {
+  margin-top: 12px;
+  font-size: 1.1rem;
   color: #00f7ff;
-  font-weight: bold;
 }
 
-/* 🔽 PRODUCT OPTIONS (NEW FEATURE) */
-.product-options {
+/* BUTTONS */
+.product button {
   margin-top: 14px;
-  padding: 14px;
-  background: #0f0f0f;
-  border: 1px solid #222;
-  border-radius: 10px;
-  display: none;
-  text-align: left;
-  animation: fadeUp 0.4s ease;
-}
-
-.product-options p {
-  font-size: 0.9rem;
-  color: #ccc;
-  margin: 6px 0;
-}
-
-.product-options button {
-  margin-top: 10px;
-  padding: 8px 14px;
+  padding: 8px 16px;
   border: none;
   background: #00f7ff;
   cursor: pointer;
-  border-radius: 6px;
+  font-size: 0.9rem;
 }
 
-.product-options button:hover {
+.product button:hover {
   background: #00cdd4;
 }
 
