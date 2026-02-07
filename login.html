@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Login | Sports Arena</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Login | Sports Arena</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="login-body">
+<body>
 
-    <!-- LOGIN BOX -->
-    <div class="login-container">
-        <h1 class="login-logo">🏆 Sports Arena</h1>
-        <p class="login-text">Login to continue</p>
+<section class="section active">
+  <div class="login-box fade">
+    <h2>Welcome Back</h2>
+    <p class="login-sub">Login to Sports Arena</p>
 
-        <form onsubmit="loginUser(event)">
-            <input type="text" id="username" placeholder="Enter Username" required>
-            <input type="password" id="password" placeholder="Enter Password" required>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
 
-            <button type="submit" class="login-btn">Login</button>
-        </form>
+    <button onclick="loginUser()">Login</button>
 
-        <p class="login-info">This is a demo login page</p>
+    <p class="login-note">* Demo login for school project</p>
+  </div>
+</section>
 
-        <button class="back-home" onclick="goHome()">⬅ Back to Home</button>
-    </div>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
