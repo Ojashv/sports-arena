@@ -1,105 +1,116 @@
+// ===============================
+// SECTION NAVIGATION
+// ===============================
 function showSection(id) {
-  document.querySelectorAll(".section").forEach(sec =>
-    sec.classList.remove("active")
-  );
-  document.getElementById(id).classList.add("active");
+  document.querySelectorAll(".section").forEach(section => {
+    section.classList.remove("active");
+  });
+
+  const target = document.getElementById(id);
+  if (target) target.classList.add("active");
 }
 
 function goLogin() {
   window.location.href = "login.html";
 }
 
-/* ================= PRODUCTS DATA ================= */
+function goHome() {
+  window.location.href = "index.html";
+}
 
+// ===============================
+// PRODUCTS DATA
+// ===============================
 const products = {
   cricket: [
-    ["Cricket Bat", "₹2,999"],
-    ["Cricket Ball", "₹299"],
-    ["Batting Pads", "₹1,499"],
-    ["Batting Gloves", "₹999"],
-    ["Helmet", "₹1,899"],
-    ["Thigh Guard", "₹499"],
-    ["Abdominal Guard", "₹399"],
-    ["Arm Guard", "₹599"],
-    ["Cricket Shoes", "₹2,499"],
-    ["Kit Bag", "₹1,299"]
+    "Cricket Bat",
+    "Cricket Ball",
+    "Batting Pads",
+    "Batting Gloves",
+    "Helmet",
+    "Thigh Guard",
+    "Abdominal Guard",
+    "Arm Guard",
+    "Cricket Shoes",
+    "Kit Bag"
   ],
 
   football: [
-    ["Football", "₹899"],
-    ["Football Boots", "₹2,499"],
-    ["Shin Guards", "₹699"],
-    ["Goalkeeper Gloves", "₹1,199"],
-    ["Jersey", "₹799"],
-    ["Football Socks", "₹299"],
-    ["Training Cones", "₹499"],
-    ["Captain Armband", "₹199"],
-    ["Ankle Guard", "₹599"],
-    ["Ball Pump", "₹249"]
+    "Football",
+    "Football Boots",
+    "Shin Guards",
+    "Goalkeeper Gloves",
+    "Jersey",
+    "Football Socks",
+    "Training Cones",
+    "Captain Armband",
+    "Ankle Guard",
+    "Ball Pump"
   ],
 
   basketball: [
-    ["Basketball", "₹1,199"],
-    ["Basketball Shoes", "₹2,799"],
-    ["Jersey", "₹899"],
-    ["Wrist Band", "₹299"],
-    ["Head Band", "₹249"],
-    ["Knee Support", "₹599"],
-    ["Basketball Hoop", "₹3,999"],
-    ["Net", "₹499"],
-    ["Training Cones", "₹399"],
-    ["Ball Pump", "₹249"]
+    "Basketball",
+    "Basketball Shoes",
+    "Jersey",
+    "Wrist Bands",
+    "Head Band",
+    "Knee Support",
+    "Basketball Hoop",
+    "Net",
+    "Training Cones",
+    "Ball Pump"
   ],
 
   badminton: [
-    ["Badminton Racket", "₹1,799"],
-    ["Shuttlecock", "₹399"],
-    ["Badminton Shoes", "₹2,199"],
-    ["Grip Tape", "₹199"],
-    ["Racket Cover", "₹299"],
-    ["Kit Bag", "₹999"],
-    ["Sweat Band", "₹199"],
-    ["Towel", "₹249"],
-    ["Net", "₹699"],
-    ["String Set", "₹349"]
+    "Badminton Racket",
+    "Shuttlecock",
+    "Badminton Shoes",
+    "Grip Tape",
+    "Racket Cover",
+    "Kit Bag",
+    "Sweat Band",
+    "Towel",
+    "Net",
+    "String Set"
   ],
 
   tennis: [
-    ["Tennis Racket", "₹2,499"],
-    ["Tennis Balls", "₹499"],
-    ["Tennis Shoes", "₹2,799"],
-    ["Grip Tape", "₹249"],
-    ["Racket Cover", "₹349"],
-    ["Wrist Band", "₹199"],
-    ["Head Band", "₹199"],
-    ["Tennis Net", "₹1,199"],
-    ["Kit Bag", "₹1,299"],
-    ["String Set", "₹399"]
+    "Tennis Racket",
+    "Tennis Balls",
+    "Tennis Shoes",
+    "Grip Tape",
+    "Racket Cover",
+    "Wrist Band",
+    "Head Band",
+    "Tennis Net",
+    "Kit Bag",
+    "String Set"
   ],
 
   swimming: [
-    ["Swimming Goggles", "₹699"],
-    ["Swim Cap", "₹199"],
-    ["Swimsuit", "₹1,499"],
-    ["Swimming Trunks", "₹899"],
-    ["Kickboard", "₹499"],
-    ["Pull Buoy", "₹599"],
-    ["Ear Plugs", "₹149"],
-    ["Nose Clip", "₹149"],
-    ["Towel", "₹399"],
-    ["Swim Bag", "₹799"]
+    "Swimming Goggles",
+    "Swim Cap",
+    "Swimsuit",
+    "Swimming Trunks",
+    "Kickboard",
+    "Pull Buoy",
+    "Ear Plugs",
+    "Nose Clip",
+    "Towel",
+    "Swim Bag"
   ]
 };
 
-/* ================= OPEN SPORT ================= */
-
+// ===============================
+// OPEN SPORT & SHOW PRODUCTS
+// ===============================
 function openSport(sport) {
   showSection("products");
 
-  document.getElementById("sportTitle").innerText =
-    sport.toUpperCase() + " EQUIPMENT";
-
+  const title = document.getElementById("sportTitle");
   const list = document.getElementById("productList");
+
+  title.innerText = sport.toUpperCase() + " EQUIPMENT";
   list.innerHTML = "";
 
   products[sport].forEach(item => {
@@ -107,11 +118,24 @@ function openSport(sport) {
     card.className = "product";
 
     card.innerHTML = `
-      <img src="https://via.placeholder.com/300x160?text=${item[0]}" alt="${item[0]}">
-      <h3>${item[0]}</h3>
-      <p class="price">${item[1]}</p>
-      <button class="buy-btn">Add to Cart</button>
+      <div style="font-size:36px; text-align:center;">🏆</div>
+      <h3>${item}</h3>
+      <p>₹ 999</p>
+
+      <div class="product-options">
+        <p>✔ Brand: Pro Sports</p>
+        <p>✔ Quality: Premium</p>
+        <p>✔ Availability: In Stock</p>
+        <button>Add to Cart</button>
+      </div>
     `;
+
+    // TOGGLE OPTIONS ON CLICK
+    card.addEventListener("click", () => {
+      const options = card.querySelector(".product-options");
+      options.style.display =
+        options.style.display === "block" ? "none" : "block";
+    });
 
     list.appendChild(card);
   });
