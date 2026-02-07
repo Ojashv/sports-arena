@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Sports Arena</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 <nav class="navbar">
   <h1 class="logo">🏆 Sports Arena</h1>
+
   <div class="nav-buttons">
     <button onclick="showSection('home')">Home</button>
     <button onclick="showSection('sports')">Sports</button>
@@ -18,16 +20,18 @@
   </div>
 </nav>
 
-<!-- HOME -->
+<!-- ================= HOME ================= -->
 <section id="home" class="section active">
   <h2 class="fade">Welcome to Sports Arena</h2>
   <p class="fade">All sports. One place.</p>
-  <button class="explore-btn fade" onclick="showSection('sports')">
+
+  <button class="explore-btn fade"
+          onclick="showSection('sports')">
     Explore
   </button>
 </section>
 
-<!-- SPORTS -->
+<!-- ================= SPORTS ================= -->
 <section id="sports" class="section">
   <h2 class="fade">Choose a Sport</h2>
 
@@ -41,41 +45,46 @@
   </div>
 </section>
 
-<!-- PRODUCTS (THIS WAS MISSING ❗) -->
+<!-- ================= PRODUCTS ================= -->
 <section id="products" class="section">
   <h2 id="sportTitle" class="fade">Sports Equipment</h2>
 
   <div id="productList" class="product-grid fade">
-    <!-- Product cards will be injected by JS -->
+    <!-- Product cards injected by JavaScript -->
   </div>
 
-  <button class="back-btn fade" onclick="showSection('sports')">
+  <button class="back-btn fade"
+          onclick="showSection('sports')">
     ← Back to Sports
   </button>
 </section>
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 <section id="about" class="section">
   <h2 class="fade">About Sports Arena</h2>
+
   <p class="fade about-text">
     Sports Arena is a modern animated sports website created as a school project.
     <br><br>
     ✦ Smooth animations  
     <br>
-    ✦ Clean black design  
+    ✦ Clean black modern design  
     <br>
-    ✦ Easy navigation  
+    ✦ Interactive product cards  
+    <br>
+    ✦ Mobile & PC friendly  
     <br><br>
     Built using HTML, CSS & JavaScript.
   </p>
 </section>
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 <footer class="footer fade">
   <p>👤 Created by: <strong>Ojashvi Shukla</strong></p>
   <p>📞 Mobile: <strong>9125721773</strong></p>
 </footer>
 
+<!-- ================= SCRIPT ================= -->
 <script src="script.js"></script>
 </body>
 </html>
