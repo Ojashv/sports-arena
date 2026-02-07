@@ -1,198 +1,184 @@
 /* RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* BODY */
 body {
-    background: black;
-    color: white;
+  background: #0b0b0b;
+  color: #fff;
 }
 
 /* NAVBAR */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 25px;
-    background: #111;
-    box-shadow: 0 0 12px cyan;
+  background: #000;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #222;
 }
 
 .logo {
-    color: cyan;
+  font-size: 1.6rem;
+  color: #00f7ff;
 }
 
 .nav-buttons button {
-    margin-left: 10px;
-    padding: 8px 14px;
-    background: transparent;
-    border: 1px solid cyan;
-    color: cyan;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 8px 14px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .nav-buttons button:hover {
-    background: cyan;
-    color: black;
+  background: #00f7ff;
+  color: #000;
 }
 
 /* SECTIONS */
 .section {
-    display: none;
-    padding: 60px 20px;
-    text-align: center;
-    animation: fadeIn 0.6s ease;
+  display: none;
+  padding: 60px 20px;
+  text-align: center;
 }
 
 .section.active {
-    display: block;
+  display: block;
 }
 
-/* ANIMATIONS */
+/* FADE ANIMATION */
 .fade {
-    animation: slideUp 0.7s ease;
+  animation: fadeUp 0.8s ease;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* HOME */
+#home h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+#home p {
+  font-size: 1.1rem;
+  color: #bbb;
+}
+
 .explore-btn {
-    margin-top: 25px;
-    padding: 12px 22px;
-    font-size: 18px;
-    background: cyan;
-    color: black;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: 0.3s;
+  margin-top: 25px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  background: #00f7ff;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .explore-btn:hover {
-    box-shadow: 0 0 15px cyan;
-    transform: scale(1.05);
+  background: #00cdd4;
 }
 
-/* SPORTS */
+/* SPORTS GRID */
 .sports-grid {
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
 }
 
 .sports-grid button {
-    padding: 15px;
-    background: #111;
-    border: 1px solid cyan;
-    color: white;
-    border-radius: 14px;
-    cursor: pointer;
-    transition: 0.3s;
+  padding: 20px;
+  background: #111;
+  color: #fff;
+  border: 1px solid #222;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
 }
 
 .sports-grid button:hover {
-    background: cyan;
-    color: black;
-    transform: scale(1.07);
+  background: #00f7ff;
+  color: #000;
+  transform: translateY(-5px);
 }
 
-/* SPORT DETAILS */
-.sport-details {
-    margin-top: 30px;
-    padding: 20px;
-    border: 1px solid cyan;
-    border-radius: 16px;
-    display: none;
-    animation: fadeIn 0.5s ease;
+/* PRODUCT CARDS */
+.product-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.product {
+  background: #111;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #222;
+  transition: 0.3s;
+}
+
+.product:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0 20px rgba(0, 247, 255, 0.25);
+}
+
+.product h3 {
+  margin-top: 10px;
+  font-size: 1.05rem;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  margin-top: 40px;
+  padding: 10px 25px;
+  background: transparent;
+  color: #00f7ff;
+  border: 1px solid #00f7ff;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background: #00f7ff;
+  color: #000;
 }
 
 /* ABOUT */
 .about-text {
-    margin-top: 20px;
-    color: #ccc;
-    line-height: 1.6;
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.7;
+  color: #ccc;
 }
 
 /* FOOTER */
 .footer {
-    margin-top: 40px;
-    padding: 20px;
-    background: #111;
-    border-top: 1px solid cyan;
-    text-align: center;
-    color: #bbb;
-}
-
-/* LOGIN PAGE */
-.login-body {
-    background: black;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-container {
-    background: #111;
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 0 25px cyan;
-    animation: fadeIn 0.8s ease;
-}
-
-.login-container input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-}
-
-.login-btn,
-.back-home {
-    margin-top: 15px;
-    padding: 10px 22px;
-    background: cyan;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.login-btn:hover,
-.back-home:hover {
-    box-shadow: 0 0 12px cyan;
-    transform: scale(1.05);
+  background: #000;
+  padding: 25px;
+  text-align: center;
+  border-top: 1px solid #222;
+  margin-top: 60px;
+  color: #aaa;
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
-    .nav-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-    }
+  #home h2 {
+    font-size: 2rem;
+  }
 }
