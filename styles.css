@@ -1,4 +1,4 @@
-/* RESET */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
@@ -8,10 +8,10 @@
 
 body {
   background: #0b0b0b;
-  color: #fff;
+  color: #ffffff;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 .navbar {
   background: #000;
   padding: 15px 30px;
@@ -41,7 +41,7 @@ body {
   color: #000;
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
 .section {
   display: none;
   padding: 60px 20px;
@@ -52,7 +52,7 @@ body {
   display: block;
 }
 
-/* FADE ANIMATION */
+/* ================= ANIMATION ================= */
 .fade {
   animation: fadeUp 0.8s ease;
 }
@@ -68,7 +68,7 @@ body {
   }
 }
 
-/* HOME */
+/* ================= HOME ================= */
 #home h2 {
   font-size: 2.5rem;
   margin-bottom: 15px;
@@ -93,7 +93,7 @@ body {
   background: #00cdd4;
 }
 
-/* SPORTS GRID */
+/* ================= SPORTS GRID ================= */
 .sports-grid {
   margin-top: 40px;
   display: grid;
@@ -117,17 +117,17 @@ body {
   transform: translateY(-5px);
 }
 
-/* PRODUCT CARDS */
+/* ================= PRODUCTS ================= */
 .product-grid {
   margin-top: 40px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
 }
 
 .product {
   background: #111;
-  padding: 25px;
+  padding: 20px;
   border-radius: 12px;
   border: 1px solid #222;
   transition: 0.3s;
@@ -138,19 +138,56 @@ body {
   box-shadow: 0 0 20px rgba(0, 247, 255, 0.25);
 }
 
+/* Product Image */
+.product img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #000;
+}
+
+/* Product Name */
 .product h3 {
   margin-top: 10px;
   font-size: 1.05rem;
 }
 
-/* BACK BUTTON */
+/* Price */
+.price {
+  margin: 6px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #00f7ff;
+}
+
+/* Add to Cart Button */
+.buy-btn {
+  margin-top: 8px;
+  width: 100%;
+  padding: 8px;
+  background: #00f7ff;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buy-btn:hover {
+  background: #00cdd4;
+}
+
+/* ================= BACK BUTTON ================= */
 .back-btn {
-  margin-top: 40px;
+  margin-top: 30px;
   padding: 10px 25px;
   background: transparent;
   color: #00f7ff;
   border: 1px solid #00f7ff;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .back-btn:hover {
@@ -158,7 +195,7 @@ body {
   color: #000;
 }
 
-/* ABOUT */
+/* ================= ABOUT ================= */
 .about-text {
   max-width: 600px;
   margin: auto;
@@ -166,7 +203,7 @@ body {
   color: #ccc;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 .footer {
   background: #000;
   padding: 25px;
@@ -176,7 +213,7 @@ body {
   color: #aaa;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media (max-width: 600px) {
   #home h2 {
     font-size: 2rem;
