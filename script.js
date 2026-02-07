@@ -1,24 +1,18 @@
-// SHOW SECTIONS WITH ANIMATION
 function showSection(id) {
   document.querySelectorAll(".section").forEach(sec =>
     sec.classList.remove("active")
   );
-
   const target = document.getElementById(id);
   if (target) target.classList.add("active");
 }
 
-// GO TO LOGIN PAGE
 function goLogin() {
   window.location.href = "login.html";
 }
 
-// GO BACK TO HOME
 function goHome() {
   window.location.href = "index.html";
 }
-
-/* ===== PRODUCT DATA FOR ALL SPORTS ===== */
 
 const products = {
   cricket: [
@@ -26,65 +20,39 @@ const products = {
     "Helmet", "Thigh Guard", "Abdominal Guard",
     "Arm Guard", "Cricket Shoes", "Kit Bag"
   ],
-
   football: [
     "Football", "Football Boots", "Shin Guards",
     "Goalkeeper Gloves", "Jersey", "Football Socks",
     "Training Cones", "Captain Armband",
     "Ankle Guard", "Ball Pump"
   ],
-
   basketball: [
     "Basketball", "Basketball Shoes", "Jersey",
     "Wrist Bands", "Head Band", "Knee Support",
     "Basketball Hoop", "Net", "Training Cones", "Ball Pump"
   ],
-
   badminton: [
     "Badminton Racket", "Shuttlecock", "Badminton Shoes",
     "Grip Tape", "Racket Cover", "Kit Bag",
     "Sweat Band", "Towel", "Net", "String Set"
   ],
-
   tennis: [
     "Tennis Racket", "Tennis Balls", "Tennis Shoes",
     "Grip Tape", "Racket Cover", "Wrist Band",
     "Head Band", "Tennis Net", "Kit Bag", "String Set"
   ],
-
   swimming: [
     "Swimming Goggles", "Swim Cap", "Swimsuit",
     "Swimming Trunks", "Kickboard", "Pull Buoy",
     "Ear Plugs", "Nose Clip", "Towel", "Swim Bag"
-  ],
-
-  volleyball: [
-    "Volleyball", "Volleyball Shoes", "Knee Pads",
-    "Net", "Jersey", "Ankle Support",
-    "Whistle", "Training Cones", "Scoreboard", "Ball Pump"
-  ],
-
-  boxing: [
-    "Boxing Gloves", "Punching Bag", "Hand Wraps",
-    "Mouth Guard", "Head Guard", "Boxing Shoes",
-    "Skipping Rope", "Focus Pads", "Groin Guard", "Kit Bag"
-  ],
-
-  athletics: [
-    "Running Shoes", "Track Spikes", "Stopwatch",
-    "Relay Baton", "Starting Blocks", "Measuring Tape",
-    "Hurdles", "Javelin", "Shot Put", "Discus"
   ]
 };
 
-// OPEN SPORT → SHOW PRODUCT CARDS
 function openSport(sport) {
   showSection("products");
 
   const title = document.getElementById("sportTitle");
   const list = document.getElementById("productList");
-
-  if (!products[sport]) return;
 
   title.innerText = sport.toUpperCase() + " EQUIPMENT";
   list.innerHTML = "";
