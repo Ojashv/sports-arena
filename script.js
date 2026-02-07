@@ -169,3 +169,18 @@ function removeItem(index) {
   cart.splice(index, 1);
   openCart();
 }
+// ===============================
+// LOGIN FUNCTION
+// ===============================
+function loginUser() {
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+
+  if (user === "" || pass === "") {
+    alert("Please fill all fields");
+    return;
+  }
+
+  alert("Login successful ✅");
+  window.location.href = "index.html";
+}
