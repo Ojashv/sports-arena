@@ -1,186 +1,102 @@
-// ===============================
-// SECTION NAVIGATION
-// ===============================
 function showSection(id) {
-  document.querySelectorAll(".section").forEach(sec => {
-    sec.classList.remove("active");
-  });
-
-  const target = document.getElementById(id);
-  if (target) target.classList.add("active");
+  document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
 }
 
 function goLogin() {
   window.location.href = "login.html";
 }
 
-function goHome() {
-  showSection("home");
-}
-
-// ===============================
-// PRODUCT DATA
-// ===============================
 const products = {
-  cricket: [
-    "Cricket Bat","Cricket Ball","Batting Pads","Batting Gloves","Helmet",
-    "Thigh Guard","Abdominal Guard","Arm Guard","Cricket Shoes","Kit Bag"
-  ],
-  football: [
-    "Football","Football Boots","Shin Guards","Goalkeeper Gloves","Jersey",
-    "Football Socks","Training Cones","Captain Armband","Ankle Guard","Ball Pump"
-  ],
-  basketball: [
-    "Basketball","Basketball Shoes","Jersey","Wrist Bands","Head Band",
-    "Knee Support","Basketball Hoop","Net","Training Cones","Ball Pump"
-  ],
-  badminton: [
-    "Badminton Racket","Shuttlecock","Badminton Shoes","Grip Tape","Racket Cover",
-    "Kit Bag","Sweat Band","Towel","Net","String Set"
-  ],
-  tennis: [
-    "Tennis Racket","Tennis Balls","Tennis Shoes","Grip Tape","Racket Cover",
-    "Wrist Band","Head Band","Tennis Net","Kit Bag","String Set"
-  ],
-  swimming: [
-    "Swimming Goggles","Swim Cap","Swimsuit","Swimming Trunks","Kickboard",
-    "Pull Buoy","Ear Plugs","Nose Clip","Towel","Swim Bag"
-  ]
+  cricket:["Bat","Ball","Pads","Gloves","Helmet","Shoes","Kit Bag","Guard","Thigh Pad","Arm Guard"],
+  football:["Ball","Boots","Shin Guard","Jersey","Socks","Pump","Cones","Gloves","Cap","Bag"],
+  basketball:["Ball","Shoes","Jersey","Hoop","Net","Knee Pad","Wrist Band","Bag","Bottle","Ladder"],
+  badminton:["Racket","Shuttle","Shoes","Grip","Net","Bag","Band","Towel","String","Cover"],
+  tennis:["Racket","Balls","Shoes","Grip","Net","Band","Cap","Bag","Cover","String"],
+  swimming:["Goggles","Cap","Suit","Trunks","Kickboard","Fins","Towel","Bag","Clip","Buoy"]
 };
 
-// ===============================
-// CART STORAGE
-// ===============================
 let cart = [];
+let currentUser = localStorage.getItem("user");
 
-// ===============================
-// OPEN SPORT → SHOW PRODUCTS
-// ===============================
 function openSport(sport) {
   showSection("products");
-
-  const title = document.getElementById("sportTitle");
   const list = document.getElementById("productList");
-
-  title.innerText = sport.toUpperCase() + " EQUIPMENT";
+  document.getElementById("sportTitle").innerText = sport.toUpperCase();
   list.innerHTML = "";
 
   products[sport].forEach(item => {
     const card = document.createElement("div");
     card.className = "product";
-
-    const basePrice = 1000;
-
     card.innerHTML = `
       <h3>${item}</h3>
-
-      <label>Size</label>
       <select class="size">
         <option value="0">Standard</option>
-        <option value="150">Medium (+₹150)</option>
-        <option value="300">Large (+₹300)</option>
+        <option value="150">Medium +₹150</option>
+        <option value="300">Large +₹300</option>
       </select>
-
-      <label>Quality</label>
       <select class="quality">
         <option value="0">Normal</option>
-        <option value="400">Premium (+₹400)</option>
+        <option value="400">Premium +₹400</option>
       </select>
-
-      <p class="price">₹${basePrice}</p>
-
-      <button class="add-btn">Add to Cart</button>
+      <p class="price">₹1000</p>
+      <button>Add to Cart</button>
     `;
 
-    const sizeEl = card.querySelector(".size");
-    const qualityEl = card.querySelector(".quality");
     const priceEl = card.querySelector(".price");
-    const addBtn = card.querySelector(".add-btn");
+    const size = card.querySelector(".size");
+    const quality = card.querySelector(".quality");
+    const btn = card.querySelector("button");
 
-    function updatePrice() {
-      const total =
-        basePrice +
-        Number(sizeEl.value) +
-        Number(qualityEl.value);
-
-      priceEl.innerText = "₹" + total;
+    function update() {
+      priceEl.innerText = "₹" + (1000 + +size.value + +quality.value);
     }
 
-    sizeEl.addEventListener("change", updatePrice);
-    qualityEl.addEventListener("change", updatePrice);
+    size.onchange = quality.onchange = update;
 
-    addBtn.addEventListener("click", () => {
-      cart.push({
-        name: item,
-        size: sizeEl.options[sizeEl.selectedIndex].text,
-        quality: qualityEl.options[qualityEl.selectedIndex].text,
-        price: priceEl.innerText
-      });
-      alert(item + " added to cart ✅");
-    });
+    btn.onclick = () => {
+      cart.push({name:item, price:priceEl.innerText});
+      alert("Added to cart");
+    };
 
     list.appendChild(card);
   });
 }
 
-// ===============================
-// OPEN CART
-// ===============================
 function openCart() {
   showSection("cart");
-
-  const cartList = document.getElementById("cartItems");
+  const list = document.getElementById("cartItems");
   const totalEl = document.getElementById("cartTotal");
-
-  cartList.innerHTML = "";
+  list.innerHTML = "";
   let total = 0;
 
-  if (cart.length === 0) {
-    cartList.innerHTML = "<p>Your cart is empty</p>";
-    totalEl.innerText = "Total: ₹0";
-    return;
-  }
-
-  cart.forEach((item, index) => {
-    const priceNum = Number(item.price.replace("₹", ""));
-    total += priceNum;
-
-    const row = document.createElement("div");
-    row.className = "product";
-
-    row.innerHTML = `
-      <h3>${item.name}</h3>
-      <p>Size: ${item.size}</p>
-      <p>Quality: ${item.quality}</p>
-      <p class="price">${item.price}</p>
-      <button onclick="removeItem(${index})">Remove</button>
-    `;
-
-    cartList.appendChild(row);
+  cart.forEach((i,idx)=>{
+    total += +i.price.replace("₹","");
+    const d = document.createElement("div");
+    d.className = "product";
+    d.innerHTML = `<h3>${i.name}</h3><p>${i.price}</p>
+    <button onclick="cart.splice(${idx},1);openCart()">Remove</button>`;
+    list.appendChild(d);
   });
 
-  totalEl.innerText = "Total: ₹" + total;
+  totalEl.innerText = "Total: ₹"+total;
 }
 
-// ===============================
-// REMOVE ITEM
-// ===============================
-function removeItem(index) {
-  cart.splice(index, 1);
+function clearCart() {
+  cart = [];
   openCart();
 }
-// ===============================
-// LOGIN FUNCTION
-// ===============================
-function loginUser() {
-  const user = document.getElementById("username").value;
-  const pass = document.getElementById("password").value;
 
-  if (user === "" || pass === "") {
-    alert("Please fill all fields");
-    return;
+window.onload = () => {
+  const box = document.getElementById("userBox");
+  if (box) {
+    box.innerHTML = currentUser
+      ? `👋 Welcome, ${currentUser} <button class="logout-btn" onclick="logout()">Logout</button>`
+      : "👤 Guest User";
   }
+};
 
-  alert("Login successful ✅");
-  window.location.href = "index.html";
+function logout() {
+  localStorage.removeItem("user");
+  location.reload();
 }
