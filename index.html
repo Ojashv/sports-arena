@@ -1,73 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sports Arena</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Sports Store</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<nav class="navbar">
-  <h1 class="logo">🏆 Sports Arena</h1>
-  <div class="nav-buttons">
-    <button onclick="showSection('home')">Home</button>
-    <button onclick="showSection('sports')">Sports</button>
-    <button onclick="openCart()">Cart</button>
-    <button onclick="showSection('about')">About</button>
-    <button onclick="goLogin()">Login</button>
-  </div>
+<header>
+    <h1>Sports Store</h1>
+</header>
+
+<nav>
+    <button class="sport-btn" onclick="toggleSport('cricket')">Cricket</button>
+    <button class="sport-btn" onclick="toggleSport('football')">Football</button>
+    <button class="sport-btn" onclick="toggleSport('badminton')">Badminton</button>
 </nav>
 
-<section id="home" class="section active">
-  <h2 class="fade">Welcome to Sports Arena</h2>
-  <p class="fade">All sports. One place.</p>
-  <button class="explore-btn fade" onclick="showSection('sports')">Explore</button>
-  <div id="userBox" class="fade"></div>
-</section>
+<main>
 
-<section id="sports" class="section">
-  <h2 class="fade">Choose a Sport</h2>
-  <div class="sports-grid fade">
-    <button onclick="openSport('cricket')">🏏 Cricket</button>
-    <button onclick="openSport('football')">⚽ Football</button>
-    <button onclick="openSport('basketball')">🏀 Basketball</button>
-    <button onclick="openSport('badminton')">🏸 Badminton</button>
-    <button onclick="openSport('tennis')">🎾 Tennis</button>
-    <button onclick="openSport('swimming')">🏊 Swimming</button>
-  </div>
-</section>
+    <!-- CRICKET -->
+    <section id="cricket" class="sport-section">
+        <h2>Cricket</h2>
 
-<section id="products" class="section">
-  <h2 id="sportTitle" class="fade"></h2>
-  <div id="productList" class="product-grid fade"></div>
-  <button class="back-btn" onclick="showSection('sports')">← Back</button>
-</section>
+        <div class="item">
+            <div class="item-title" onclick="toggleItem(this)">Bats</div>
+            <div class="sub-items">
+                <p>English Willow</p>
+                <p>Kashmir Willow</p>
+                <p>Tennis Bat</p>
+            </div>
+        </div>
 
-<section id="cart" class="section">
-  <h2 class="fade">Your Cart</h2>
-  <div id="cartItems" class="product-grid fade"></div>
-  <h3 id="cartTotal"></h3>
-  <button class="back-btn" onclick="clearCart()">Clear Cart</button>
-  <button class="back-btn" onclick="showSection('home')">Back Home</button>
-</section>
+        <div class="item">
+            <div class="item-title" onclick="toggleItem(this)">Balls</div>
+            <div class="sub-items">
+                <p>Leather Ball</p>
+                <p>Tennis Ball</p>
+                <p>Rubber Ball</p>
+            </div>
+        </div>
 
-<section id="about" class="section">
-  <h2 class="fade">About</h2>
-  <p class="about-text fade">
-    Sports Arena is a modern animated sports shopping website.<br><br>
-    ✔ Clean UI<br>
-    ✔ Product variants<br>
-    ✔ Cart system<br>
-    ✔ Login system<br><br>
-    Built using HTML, CSS & JavaScript.
-  </p>
-</section>
+        <div class="item">
+            <div class="item-title" onclick="toggleItem(this)">Protective Gear</div>
+            <div class="sub-items">
+                <p>Helmet</p>
+                <p>Gloves</p>
+                <p>Pads</p>
+            </div>
+        </div>
+    </section>
 
-<footer class="footer fade">
-  <p>👤 Created by: <strong>Ojashvi Shukla</strong></p>
-  <p>📞 Mobile: <strong>9125721773</strong></p>
-</footer>
+    <!-- FOOTBALL -->
+    <section id="football" class="sport-section">
+        <h2>Football</h2>
+
+        <div class="item">
+            <div class="item-title" onclick="toggleItem(this)">Footballs</div>
+            <div class="sub-items">
+                <p>Match Ball</p>
+                <p>Training Ball</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-title" onclick="toggleItem(this)">Shoes</div>
+            <div class="sub-items">
+                <p>Studs</p>
+                <p>Turf Shoes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BADMINTON -->
+    <section id="badminton" class="sport-section">
+        <h2>Badminton</h2>
+
+        <div class="item">
+            <div class="item-title" onclick="toggleItem(this)">Rackets</div>
+            <div class="sub-items">
+                <p>Beginner Racket</p>
+                <p>Professional Racket</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-title" onclick="toggleItem(this)">Shuttlecocks</div>
+            <div class="sub-items">
+                <p>Feather</p>
+                <p>Nylon</p>
+            </div>
+        </div>
+    </section>
+
+</main>
 
 <script src="script.js"></script>
 </body>
