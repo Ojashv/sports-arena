@@ -3,29 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <title>Sports Arena</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
   <h1 class="logo">🏆 Sports Arena</h1>
   <div class="nav-buttons">
     <button onclick="showSection('home')">Home</button>
     <button onclick="showSection('sports')">Sports</button>
-    <button onclick="openCart()">Cart</button>
-    <button onclick="showSection('about')">About</button>
-    <button onclick="goLogin()">Login</button>
+    <button onclick="showSection('cart')">Cart</button>
+    <button onclick="guestLogin()">Guest User</button>
   </div>
 </nav>
 
+<!-- HOME -->
 <section id="home" class="section active">
   <h2 class="fade">Welcome to Sports Arena</h2>
   <p class="fade">All sports. One place.</p>
   <button class="explore-btn fade" onclick="showSection('sports')">Explore</button>
-  <div id="userBox" class="fade"></div>
 </section>
 
+<!-- GUEST -->
+<section id="guest" class="section">
+  <h2 class="fade">Welcome 🎉</h2>
+  <p class="fade about-text">
+    You are now a <strong>member of Sports Arena</strong>.
+  </p>
+  <button class="explore-btn fade" onclick="showSection('sports')">Start Shopping</button>
+</section>
+
+<!-- SPORTS -->
 <section id="sports" class="section">
   <h2 class="fade">Choose a Sport</h2>
   <div class="sports-grid fade">
@@ -33,40 +42,26 @@
     <button onclick="openSport('football')">⚽ Football</button>
     <button onclick="openSport('basketball')">🏀 Basketball</button>
     <button onclick="openSport('badminton')">🏸 Badminton</button>
-    <button onclick="openSport('tennis')">🎾 Tennis</button>
-    <button onclick="openSport('swimming')">🏊 Swimming</button>
   </div>
 </section>
 
+<!-- PRODUCTS -->
 <section id="products" class="section">
   <h2 id="sportTitle" class="fade"></h2>
   <div id="productList" class="product-grid fade"></div>
-  <button class="back-btn" onclick="showSection('sports')">← Back</button>
+  <button class="back-btn fade" onclick="showSection('sports')">← Back</button>
 </section>
 
+<!-- CART -->
 <section id="cart" class="section">
   <h2 class="fade">Your Cart</h2>
-  <div id="cartItems" class="product-grid fade"></div>
-  <h3 id="cartTotal"></h3>
-  <button class="back-btn" onclick="clearCart()">Clear Cart</button>
-  <button class="back-btn" onclick="showSection('home')">Back Home</button>
+  <div id="cartList" class="fade"></div>
+  <button class="back-btn fade" onclick="showSection('sports')">← Continue Shopping</button>
 </section>
 
-<section id="about" class="section">
-  <h2 class="fade">About</h2>
-  <p class="about-text fade">
-    Sports Arena is a modern animated sports shopping website.<br><br>
-    ✔ Clean UI<br>
-    ✔ Product variants<br>
-    ✔ Cart system<br>
-    ✔ Login system<br><br>
-    Built using HTML, CSS & JavaScript.
-  </p>
-</section>
-
+<!-- FOOTER -->
 <footer class="footer fade">
-  <p>👤 Created by: <strong>Ojashvi Shukla</strong></p>
-  <p>📞 Mobile: <strong>9125721773</strong></p>
+  <p>Created by <strong>Ojashvi Shukla</strong></p>
 </footer>
 
 <script src="script.js"></script>
